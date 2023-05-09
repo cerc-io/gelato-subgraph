@@ -11,7 +11,7 @@
     "deploy-mainnet": "graph deploy --debug --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ gelatodigital/gelato-network"
   },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.19.0",
-    "@graphprotocol/graph-ts": "0.19.0"
+    "@cerc-io/graph-cli": "0.22.4-watcher-ts-0.1.0",
+    "@graphprotocol/graph-ts": "npm:@cerc-io/graph-ts@0.22.1-watcher-ts-0.1.0"
   }
 }
