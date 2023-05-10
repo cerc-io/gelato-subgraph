@@ -206,9 +206,10 @@ export function handleLogTaskSubmitted(event: LogTaskSubmitted): void {
 export function handleLogCanExecFailed(event: LogCanExecFailed): void {}
 
 export function handleLogExecReverted(event: LogExecReverted): void {
+  // https://thegraph.com/docs/en/release-notes/assemblyscript-migration-guide/#nullability
   let taskReceiptWrapper = TaskReceiptWrapper.load(
     event.params.taskReceiptId.toString()
-  );
+  )!;
   taskReceiptWrapper.executionDate = event.block.timestamp;
   taskReceiptWrapper.executionHash = event.transaction.hash;
   taskReceiptWrapper.status = "execReverted";
@@ -218,7 +219,7 @@ export function handleLogExecReverted(event: LogExecReverted): void {
 export function handleLogExecSuccess(event: LogExecSuccess): void {
   let taskReceiptWrapper = TaskReceiptWrapper.load(
     event.params.taskReceiptId.toString()
-  );
+  )!;
   taskReceiptWrapper.executionDate = event.block.timestamp;
   taskReceiptWrapper.executionHash = event.transaction.hash;
   taskReceiptWrapper.status = "execSuccess";
@@ -299,7 +300,7 @@ export function handleLogSysAdminSuccessShareSet(
 export function handleLogTaskCancelled(event: LogTaskCancelled): void {
   let taskReceiptWrapper = TaskReceiptWrapper.load(
     event.params.taskReceiptId.toString()
-  );
+  )!;
   taskReceiptWrapper.executionDate = event.block.timestamp;
   taskReceiptWrapper.executionHash = event.transaction.hash;
   taskReceiptWrapper.status = "canceled";

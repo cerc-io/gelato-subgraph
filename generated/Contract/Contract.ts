@@ -612,7 +612,9 @@ export class LogTaskSubmitted__Params {
   }
 
   get taskReceipt(): LogTaskSubmittedTaskReceiptStruct {
-    return this._event.parameters[2].value.toTuple() as LogTaskSubmittedTaskReceiptStruct;
+    return changetype<LogTaskSubmittedTaskReceiptStruct>(
+      this._event.parameters[2].value.toTuple()
+    );
   }
 }
 
@@ -626,7 +628,9 @@ export class LogTaskSubmittedTaskReceiptStruct extends ethereum.Tuple {
   }
 
   get provider(): LogTaskSubmittedTaskReceiptProviderStruct {
-    return this[2].toTuple() as LogTaskSubmittedTaskReceiptProviderStruct;
+    return changetype<LogTaskSubmittedTaskReceiptProviderStruct>(
+      this[2].toTuple()
+    );
   }
 
   get index(): BigInt {
@@ -750,7 +754,9 @@ export class Contract__canExecInput_TRStruct extends ethereum.Tuple {
   }
 
   get provider(): Contract__canExecInput_TRProviderStruct {
-    return this[2].toTuple() as Contract__canExecInput_TRProviderStruct;
+    return changetype<Contract__canExecInput_TRProviderStruct>(
+      this[2].toTuple()
+    );
   }
 
   get index(): BigInt {
@@ -938,7 +944,9 @@ export class Contract__executionWrapperInputTaskReceiptStruct extends ethereum.T
   }
 
   get provider(): Contract__executionWrapperInputTaskReceiptProviderStruct {
-    return this[2].toTuple() as Contract__executionWrapperInputTaskReceiptProviderStruct;
+    return changetype<Contract__executionWrapperInputTaskReceiptProviderStruct>(
+      this[2].toTuple()
+    );
   }
 
   get index(): BigInt {
@@ -1046,7 +1054,9 @@ export class Contract__hashTaskReceiptInput_TRStruct extends ethereum.Tuple {
   }
 
   get provider(): Contract__hashTaskReceiptInput_TRProviderStruct {
-    return this[2].toTuple() as Contract__hashTaskReceiptInput_TRProviderStruct;
+    return changetype<Contract__hashTaskReceiptInput_TRProviderStruct>(
+      this[2].toTuple()
+    );
   }
 
   get index(): BigInt {
@@ -2540,7 +2550,9 @@ export class ConstructorCall__Inputs {
   }
 
   get _(): ConstructorCall_Struct {
-    return this._call.inputValues[0].value.toTuple() as ConstructorCall_Struct;
+    return changetype<ConstructorCall_Struct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 }
 
@@ -2634,7 +2646,9 @@ export class CancelTaskCall__Inputs {
   }
 
   get _TR(): CancelTaskCall_TRStruct {
-    return this._call.inputValues[0].value.toTuple() as CancelTaskCall_TRStruct;
+    return changetype<CancelTaskCall_TRStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 }
 
@@ -2656,7 +2670,7 @@ export class CancelTaskCall_TRStruct extends ethereum.Tuple {
   }
 
   get provider(): CancelTaskCall_TRProviderStruct {
-    return this[2].toTuple() as CancelTaskCall_TRProviderStruct;
+    return changetype<CancelTaskCall_TRProviderStruct>(this[2].toTuple());
   }
 
   get index(): BigInt {
@@ -2762,7 +2776,9 @@ export class ExecCall__Inputs {
   }
 
   get _TR(): ExecCall_TRStruct {
-    return this._call.inputValues[0].value.toTuple() as ExecCall_TRStruct;
+    return changetype<ExecCall_TRStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 }
 
@@ -2784,7 +2800,7 @@ export class ExecCall_TRStruct extends ethereum.Tuple {
   }
 
   get provider(): ExecCall_TRProviderStruct {
-    return this[2].toTuple() as ExecCall_TRProviderStruct;
+    return changetype<ExecCall_TRProviderStruct>(this[2].toTuple());
   }
 
   get index(): BigInt {
@@ -2890,7 +2906,9 @@ export class ExecutionWrapperCall__Inputs {
   }
 
   get taskReceipt(): ExecutionWrapperCallTaskReceiptStruct {
-    return this._call.inputValues[0].value.toTuple() as ExecutionWrapperCallTaskReceiptStruct;
+    return changetype<ExecutionWrapperCallTaskReceiptStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 
   get _gasLimit(): BigInt {
@@ -2928,7 +2946,9 @@ export class ExecutionWrapperCallTaskReceiptStruct extends ethereum.Tuple {
   }
 
   get provider(): ExecutionWrapperCallTaskReceiptProviderStruct {
-    return this[2].toTuple() as ExecutionWrapperCallTaskReceiptProviderStruct;
+    return changetype<ExecutionWrapperCallTaskReceiptProviderStruct>(
+      this[2].toTuple()
+    );
   }
 
   get index(): BigInt {
@@ -3098,7 +3118,9 @@ export class MultiCancelTasksCall_taskReceiptsStruct extends ethereum.Tuple {
   }
 
   get provider(): MultiCancelTasksCall_taskReceiptsProviderStruct {
-    return this[2].toTuple() as MultiCancelTasksCall_taskReceiptsProviderStruct;
+    return changetype<MultiCancelTasksCall_taskReceiptsProviderStruct>(
+      this[2].toTuple()
+    );
   }
 
   get index(): BigInt {
@@ -3862,11 +3884,15 @@ export class SubmitTaskCall__Inputs {
   }
 
   get _provider(): SubmitTaskCall_providerStruct {
-    return this._call.inputValues[0].value.toTuple() as SubmitTaskCall_providerStruct;
+    return changetype<SubmitTaskCall_providerStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 
   get _task(): SubmitTaskCall_taskStruct {
-    return this._call.inputValues[1].value.toTuple() as SubmitTaskCall_taskStruct;
+    return changetype<SubmitTaskCall_taskStruct>(
+      this._call.inputValues[1].value.toTuple()
+    );
   }
 
   get _expiryDate(): BigInt {
@@ -3964,7 +3990,9 @@ export class SubmitTaskChainCall__Inputs {
   }
 
   get _provider(): SubmitTaskChainCall_providerStruct {
-    return this._call.inputValues[0].value.toTuple() as SubmitTaskChainCall_providerStruct;
+    return changetype<SubmitTaskChainCall_providerStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 
   get _tasks(): Array<SubmitTaskChainCall_tasksStruct> {
@@ -4072,7 +4100,9 @@ export class SubmitTaskCycleCall__Inputs {
   }
 
   get _provider(): SubmitTaskCycleCall_providerStruct {
-    return this._call.inputValues[0].value.toTuple() as SubmitTaskCycleCall_providerStruct;
+    return changetype<SubmitTaskCycleCall_providerStruct>(
+      this._call.inputValues[0].value.toTuple()
+    );
   }
 
   get _tasks(): Array<SubmitTaskCycleCall_tasksStruct> {
